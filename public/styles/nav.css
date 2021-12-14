@@ -1,0 +1,35 @@
+nav {
+  background-color: #4056A2;
+  color: #FFFFFF;
+  height: 120px;
+  width: 100vw;
+  /* padding-top: 3em; */
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav span.logo {
+  font-family: 'Bungee';
+  padding-bottom: 1em;
+
+  display: flex;
+  align-self: flex-end;
+}
+
+/* .arrow-icon {
+  color: red;
+
+  display: flex;
+  justify-content: center;
+} */
+
+.fa-angle-double-down{
+  color: red;
+
+  display: flex;
+  justify-content: center;
+}
