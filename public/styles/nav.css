@@ -3,9 +3,11 @@ nav {
   color: #FFFFFF;
   height: 120px;
   width: 100vw;
-  /* padding-top: 3em; */
   padding-left: 1.5em;
   padding-right: 1.5em;
+  position: fixed; /* set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+
 
   display: flex;
   justify-content: space-between;
@@ -19,13 +21,6 @@ nav span.logo {
   display: flex;
   align-self: flex-end;
 }
-
-/* .arrow-icon {
-  color: red;
-
-  display: flex;
-  justify-content: center;
-} */
 
 .fa-angle-double-down{
   color: red;

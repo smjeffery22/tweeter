@@ -14,6 +14,7 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -26,12 +27,36 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="logo">tweeter</span>
-      <span><b>write</b> a tweet
+      <span><strong>write</strong> a new tweet
         <div><i class="fas fa-angle-double-down"></i></div>
       </span>
     </nav>
 
+    <header>
+      <div>
+        <img src="/images/profile-hex.png"> 
+      </div>
+      <div>
+        <!-- <h2 style="margin-top: 0px;">Jeffery Park</h2> -->
+        <p style="margin-top: 0px;"><strong>Jeffery</strong> Park</p>
+      </div>
+    </header>
+
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <div class="parent-container">
+      <main class="container">
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <form action="/tweets/" method="POST">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div>
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

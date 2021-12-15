@@ -1,0 +1,14 @@
+header {
+  color: #FFFFFF;
+  font-size: 1.5em;
+  background: #0ABAB5;
+  background-image: url("../images/head-bckgrnd-brick-wall.png");
+
+  height: 480px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
