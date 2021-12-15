@@ -14,6 +14,9 @@ nav {
   align-items: center;
 }
 
+/*
+ * Style for logo
+ */
 nav span.logo {
   font-family: 'Bungee';
   padding-bottom: 1em;
@@ -22,6 +25,9 @@ nav span.logo {
   align-self: flex-end;
 }
 
+/*
+ * Double-down icon on the right side of the navbar
+ */
 .fa-angle-double-down{
   color: red;
 
