@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-post.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -33,7 +34,7 @@
       </span>
     </nav>
 
-    <header>
+    <header id="tweeter-header">
       <div>
         <img src="/images/profile-hex.png"> 
       </div>
@@ -57,7 +58,28 @@
             </div>
           </form>
         </section>
+
+        <section class="tweet-post-container">
+          <article>
+            <header class="content-header">
+              <span>Newton</span>
+              <span>@SirIssac</span>
+            </header>
+            <p class="tweet-content">If I have seen further it is by standing on the shoulders of giants</p>
+            <footer class="content-footer">
+              <span class="date-count">10 days ago</span>
+              <div class="footer-icons">
+                <div><i class="fas fa-flag"></i></div>
+                <div><i class="fas fa-retweet"></i></div>
+                <div><i class="fas fa-heart"></i></div>
+              </div>
+            </footer>
+          </article>
+        </section>
+        <p>New Line</p>
       </main>
     </div>
   </body>
+
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 </html>
