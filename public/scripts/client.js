@@ -5,17 +5,38 @@
  */
 
 $(document).ready(function() {
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
+const tweetData = [
+  {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png"
+      ,
       "handle": "@SirIsaac"
     },
-  "content": {
+    "content": {
       "text": "If I have seen further it is by standing on the shoulders of giants"
     },
-  "created_at": 1461116232227
-}
+    "created_at": 1461116232227
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
+  }
+];
+
+// Take an array of tweet objects
+// Append each one to #tweet-post-container 
+const renderTweets = function(tweets) {
+  for (const tweet of tweets) {
+    $('#tweet-post-container').append(createTweetElement(tweet));
+  }
+};
 
 // Take in a tweet object
 // Return a tweet <article> element containing the entire HTML structure of the tweet
@@ -23,7 +44,7 @@ const createTweetElement = function(data) {
   const $tweet = $(`
   <article class="tweet">
     <header class="content-header">
-      <span class="tweeter-name">${data.user.avatars} ${data.user.name}</span>
+      <span class="tweeter-name"><img src=${data.user.avatars}> ${data.user.name}</span>
       <span class="tweeter-id">${data.user.handle}</span>
     </header>
     <p class="tweet-content">${data.content.text}</p>
@@ -40,7 +61,5 @@ const createTweetElement = function(data) {
   return $tweet;
 }
 
-const $tweet = createTweetElement(tweetData);
-
-$('#tweet-post-container').append($tweet);
+renderTweets(tweetData)
 })
