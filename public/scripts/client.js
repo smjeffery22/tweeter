@@ -5,6 +5,15 @@
  */
 
 $(document).ready(function() {
+  // Escape function for XSS
+  const escape = function (str) {
+    let div = document.createElement("div");
+
+    div.appendChild(document.createTextNode(str));
+
+    return div.innerHTML;
+  };
+  
   // Fetch tweets from /tweets page
   const loadTweets = function() {
     $.ajax({
@@ -37,7 +46,7 @@ $(document).ready(function() {
         <span class="tweeter-name"><img src=${data.user.avatars}> ${data.user.name}</span>
         <span class="tweeter-id">${data.user.handle}</span>
       </header>
-      <p class="tweet-content">${data.content.text}</p>
+      <p class="tweet-content">${escape(data.content.text)}</p>
       <footer class="content-footer">
         <span class="date-count">${timeago.format(data.created_at)}</span>
         <div class="footer-icons">
@@ -68,15 +77,12 @@ $(document).ready(function() {
     if (tweetInput === '' || tweetInput === null) return alert('Your tweet cannot be empty!');
     if (tweetInputCounter > totalAllowedCount) return alert(`Tweet message cannot be more than ${totalAllowedCount} characters!`);
 
-    alert('Your tweet has been submitted!');
     const serializedData = $(this).serialize();
-    console.log(serializedData);
-
+    
     $.post('/tweets', serializedData, (response) => {
-      console.log('Response:', response);
       loadTweets();
       $('#tweet-text').val('');
     })
-
+    alert('Your tweet has been submitted!');
   })
 })
