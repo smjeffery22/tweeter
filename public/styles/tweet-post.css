@@ -3,7 +3,7 @@
   border-width: thick;
 }
 
-.tweet-post-container:hover {
+.tweet:hover {
   box-shadow: 7px 7px #7FFFD4;
 }
 

@@ -61,7 +61,16 @@ const tweetData = [
     return $tweet;
   }
 
-  renderTweets(tweetData)
+  // Fetch tweets from /tweets page
+  const loadTweets = function() {
+    $.ajax('/tweets', { method: 'GET' })
+    .then(function(tweetPosts) {
+      renderTweets(tweetPosts);
+    })
+  };
+
+  loadTweets();
+
 
   // Evenet listener for submit and prevent its default behaviour
   // Serialize the form data and send it to the server
@@ -70,6 +79,8 @@ const tweetData = [
     alert('Submitted!');
     const serializedData = $(this).serialize();
     
-    $.post('/tweets/', serializedData)
+    $.post('/tweets', serializedData)
   })
+
+
 })
