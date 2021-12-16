@@ -34,7 +34,7 @@ const tweetData = [
 // Append each one to #tweet-post-container 
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
-    $('#tweet-post-container').append(createTweetElement(tweet));
+    $('#tweet-post-container').prepend(createTweetElement(tweet));
   }
 };
 
@@ -62,4 +62,10 @@ const createTweetElement = function(data) {
 }
 
 renderTweets(tweetData)
+
+// Evenet listener for submit and prevent its default behaviour
+$('#tweet-form').submit(function(event) {
+  event.preventDefault();
+  alert('Submitted!');
+})
 })
