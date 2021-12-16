@@ -6,9 +6,9 @@ $(document).ready(function() {
   $('#tweet-text').on('input', function() {
     const typeCount = this.value.length;
     const remainingCount = totalAllowedCount - typeCount;
-
+    
     (typeCount > totalAllowedCount) ? $('.counter').css({'color': 'red'}) : $('.counter').css('color', '#545149');
 
-    $('#counter').text(remainingCount);
+    $('.counter').text(remainingCount);
   })
 });
