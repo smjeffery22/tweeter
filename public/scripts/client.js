@@ -32,13 +32,17 @@ const tweetData = [
 
   // Fetch tweets from /tweets page
   const loadTweets = function() {
-     $.ajax({
+    // $.ajax('/tweets', { method: 'GET' })
+    // .then(function(tweetPosts) {
+    //   renderTweets(tweetPosts);
+    // }) 
+    
+    $.ajax({
       url: '/tweets',
       method: 'GET',
       dataType: 'json',
       success: (tweetPosts) => {
         renderTweets(tweetPosts)
-        console.log(tweetPosts);
       },
       error: (err) => {
         console.log('error:', err);
@@ -79,12 +83,22 @@ const tweetData = [
 
   loadTweets();
 
-
   // Evenet listener for submit and prevent its default behaviour
   // Serialize the form data and send it to the server
+  const totalAllowedCount = $('.counter').val();
+
   $('form').on('submit', function(event) {
     event.preventDefault();
-    alert('Submitted!');
+
+    // Store the user input
+    const tweetInput = $(this).find('#tweet-text').val();
+    const tweetInputCounter = $(this).find('#tweet-text').val().length;
+    
+    // Tweet checks and validations
+    if (tweetInput === '' || tweetInput === null) return alert('Your tweet cannot be empty!');
+    if (tweetInputCounter > totalAllowedCount) return alert(`Tweet message cannot be more than ${totalAllowedCount} characters!`);
+
+    alert('Your tweet has been submitted!');
     const serializedData = $(this).serialize();
     
     $.post('/tweets', serializedData)
