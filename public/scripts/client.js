@@ -30,6 +30,22 @@ const tweetData = [
   }
 ];
 
+  // Fetch tweets from /tweets page
+  const loadTweets = function() {
+     $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      dataType: 'json',
+      success: (tweetPosts) => {
+        renderTweets(tweetPosts)
+        console.log(tweetPosts);
+      },
+      error: (err) => {
+        console.log('error:', err);
+      }
+    })
+  };
+
   // Take an array of tweet objects
   // Append each one to #tweet-post-container 
   const renderTweets = function(tweets) {
@@ -60,14 +76,6 @@ const tweetData = [
 
     return $tweet;
   }
-
-  // Fetch tweets from /tweets page
-  const loadTweets = function() {
-    $.ajax('/tweets', { method: 'GET' })
-    .then(function(tweetPosts) {
-      renderTweets(tweetPosts);
-    })
-  };
 
   loadTweets();
 
