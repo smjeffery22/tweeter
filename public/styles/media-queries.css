@@ -8,7 +8,7 @@
 }
 
 
-/* Laptops / Desktops: minimum width of 1024px */
+/* Breakpoint for desktop*/
 @media only screen and (min-width: 1025px) {
 /* Write CSS rules that target Laptop/Desktop screen sizes and beyond */
   nav {

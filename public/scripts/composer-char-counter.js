@@ -10,5 +10,5 @@ $(document).ready(function() {
     (typeCount > totalAllowedCount) ? $('.counter').css({'color': 'red'}) : $('.counter').css('color', '#545149');
 
     $('.counter').text(remainingCount);
-  })
+  });
 });

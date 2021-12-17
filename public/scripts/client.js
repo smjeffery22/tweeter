@@ -6,7 +6,7 @@
 
 $(document).ready(function() {
   // Escape function for XSS
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
 
     div.appendChild(document.createTextNode(str));
@@ -21,12 +21,12 @@ $(document).ready(function() {
       method: 'GET',
       dataType: 'json',
       success: (tweetPosts) => {
-        renderTweets(tweetPosts)
+        renderTweets(tweetPosts);
       },
       error: (err) => {
         console.log('error:', err);
       }
-    })
+    });
   };
 
   // Take an array of tweet objects
@@ -60,7 +60,7 @@ $(document).ready(function() {
     </article>`);
 
     return $tweet;
-  }
+  };
 
   loadTweets();
 
@@ -89,17 +89,17 @@ $(document).ready(function() {
       // Serialize the form data and send it to the server
       const serializedData = $(this).serialize();
       
-      $.post('/tweets', serializedData, (response) => {
+      $.post('/tweets', serializedData, () => {
         loadTweets();
 
         // Clear textarea and reset the character counter
         $('#tweet-text').val('');
-        $('.counter').val(totalAllowedCount);   
-      })
+        $('.counter').val(totalAllowedCount);
+      });
 
       $('#error-box-empty').slideUp();
       $('#error-box-exceed').slideUp();
       $('#submit-box').slideDown();
     }
-  })
-})
+  });
+});
