@@ -32,6 +32,8 @@ $(document).ready(function() {
   // Take an array of tweet objects
   // Append each one to #tweet-post-container 
   const renderTweets = function(tweets) {
+    $('#tweet-post-container').empty();
+    
     for (const tweet of tweets) {
       $('#tweet-post-container').prepend(createTweetElement(tweet));
     }
@@ -62,10 +64,9 @@ $(document).ready(function() {
 
   loadTweets();
 
-  // Event listener for submit and prevent its default behaviour
-  // Serialize the form data and send it to the server
   const totalAllowedCount = $('.counter').val();
-
+  
+  // Event listener for submit and prevent its default behaviour
   $('form').on('submit', function(event) {
     event.preventDefault();
 
@@ -74,18 +75,31 @@ $(document).ready(function() {
     const tweetInputCounter = $(this).find('#tweet-text').val().length;
     
     // Tweet checks and validations
-    if (!tweetInput) return $('#error-box-empty').slideDown();
-    if (tweetInputCounter > totalAllowedCount) return $('#error-box-exceed').slideDown();;
+    if (!tweetInput) {
+      $('#submit-box').slideUp();
+      $('#error-box-exceed').slideUp();
+      $('#error-box-empty').slideDown();
+      return;
+    } else if (tweetInputCounter > totalAllowedCount) {
+      $('#submit-box').slideUp();
+      $('#error-box-empty').slideUp();
+      $('#error-box-exceed').slideDown();
+      return;
+    } else {
+      // Serialize the form data and send it to the server
+      const serializedData = $(this).serialize();
+      
+      $.post('/tweets', serializedData, (response) => {
+        loadTweets();
 
-    const serializedData = $(this).serialize();
-    
-    $.post('/tweets', serializedData, (response) => {
-      loadTweets();
-      $('#tweet-text').val('');
-    })
-    
-    $('#error-box-empty').slideUp();
-    $('#error-box-exceed').slideUp();
-    $('#submit-box').slideDown();
+        // Clear textarea and reset the character counter
+        $('#tweet-text').val('');
+        $('.counter').val(totalAllowedCount);   
+      })
+
+      $('#error-box-empty').slideUp();
+      $('#error-box-exceed').slideUp();
+      $('#submit-box').slideDown();
+    }
   })
 })
