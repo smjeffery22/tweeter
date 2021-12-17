@@ -1,0 +1,32 @@
+/* Breakpoint for tablet */
+@media only screen and (max-width: 1024px) {
+/* Write CSS rules that target Tablets screen sizes downwards - including smartphones */
+  nav {
+    background: #0ABAB5;
+    background-image: url("../images/head-bckgrnd-brick-wall.png");
+  }  
+}
+
+
+/* Laptops / Desktops: minimum width of 1024px */
+@media only screen and (min-width: 1025px) {
+/* Write CSS rules that target Laptop/Desktop screen sizes and beyond */
+  nav {
+    position: unset;
+
+  }
+
+  #overall-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #tweeter-header {
+    width: 25%;
+    margin: 29.880px 50px 0 50px;
+  }
+  
+  .parent-container {
+    width: 75%;
+  }
+}
