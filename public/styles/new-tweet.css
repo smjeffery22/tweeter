@@ -1,3 +1,33 @@
+#error-box-empty, #error-box-exceed {
+  border-style: solid;
+  border-color: red;
+  border-width: thick;
+  margin: 10px 0;
+  display: none;
+}
+
+.error-message {
+  color: red;
+  font-style: oblique;
+  font-weight: bold;
+  margin: 10px 20px;
+}
+
+#submit-box {
+  border-style: solid;
+  border-color: #0ABAB5;
+  border-width: thick;
+  margin: 10px 0;
+  display: none;
+}
+
+.submit-message {
+  color: #0ABAB5;
+  font-style: oblique;
+  font-weight: bold;
+  margin: 10px 20px;
+}
+
 .new-tweet {
   display: flex;
   flex-direction: column;

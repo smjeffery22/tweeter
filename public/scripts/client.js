@@ -62,7 +62,7 @@ $(document).ready(function() {
 
   loadTweets();
 
-  // Evenet listener for submit and prevent its default behaviour
+  // Event listener for submit and prevent its default behaviour
   // Serialize the form data and send it to the server
   const totalAllowedCount = $('.counter').val();
 
@@ -74,8 +74,8 @@ $(document).ready(function() {
     const tweetInputCounter = $(this).find('#tweet-text').val().length;
     
     // Tweet checks and validations
-    if (tweetInput === '' || tweetInput === null) return alert('Your tweet cannot be empty!');
-    if (tweetInputCounter > totalAllowedCount) return alert(`Tweet message cannot be more than ${totalAllowedCount} characters!`);
+    if (!tweetInput) return $('#error-box-empty').slideDown();
+    if (tweetInputCounter > totalAllowedCount) return $('#error-box-exceed').slideDown();;
 
     const serializedData = $(this).serialize();
     
@@ -83,6 +83,9 @@ $(document).ready(function() {
       loadTweets();
       $('#tweet-text').val('');
     })
-    alert('Your tweet has been submitted!');
+    
+    $('#error-box-empty').slideUp();
+    $('#error-box-exceed').slideUp();
+    $('#submit-box').slideDown();
   })
 })
