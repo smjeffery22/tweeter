@@ -22,11 +22,11 @@ Mobile version of the app is also available!
 
 ## Screenshots
 
-Tweeter Desktop Version (Full Sreen)
-!['Screenshot of tweeter desktop version (1)']()
+*Screenshot 1. Tweeter Desktop Version (Full Sreen)*
+!['Screenshot of tweeter desktop version (1)'](https://github.com/smjeffery22/tweeter/blob/master/docs/desktop-submit-1.png?raw=true)
 
-Tweeter Desktop Version (Small Sreen)
-!['Screenshot of tweeter desktop version (2)']()
+*Screenshot 2. Tweeter Desktop Version (Small Sreen)*
+!['Screenshot of tweeter desktop version (2)'](https://github.com/smjeffery22/tweeter/blob/master/docs/desktop-submit-2.png?raw=true)
 
-Tweeter Mobile Version
-!['Screenshot of tweeter mobile version']()
+*Screenshot 3. Tweeter Mobile Version*
+!['Screenshot of tweeter mobile version'](https://github.com/smjeffery22/tweeter/blob/master/docs/mobile-submit.png?raw=true)
