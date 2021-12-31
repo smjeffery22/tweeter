@@ -64,6 +64,12 @@ $(document).ready(function() {
 
   loadTweets();
 
+  // Event listener for toggle tweeter form
+  $('label[id=navbar-tweet-compose]').on('click', function(event) {
+    console.log(event);
+    $('section.new-tweet').slideToggle();
+  })
+
   const totalAllowedCount = $('.counter').val();
   
   // Event listener for submit and prevent its default behaviour

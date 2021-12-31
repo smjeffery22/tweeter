@@ -25,12 +25,12 @@ nav span.logo {
   align-self: flex-end;
 }
 
-nav label[for=tweet-text] {
+nav label[id=navbar-tweet-compose] {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: normal;
 }
 
-nav label[for=tweet-text]:hover {
+nav label[id=navbar-tweet-compose]:hover {
   cursor: pointer;
 }
 
