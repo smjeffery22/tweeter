@@ -18,11 +18,20 @@ nav {
  * Style for logo
  */
 nav span.logo {
-  font-family: 'Bungee';
+  font-family: 'Bungee', sans-serif;
   padding-bottom: 1em;
 
   display: flex;
   align-self: flex-end;
+}
+
+nav label[for=tweet-text] {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: normal;
+}
+
+nav label[for=tweet-text]:hover {
+  cursor: pointer;
 }
 
 /*
@@ -30,7 +39,18 @@ nav span.logo {
  */
 .fa-angle-double-down{
   color: red;
+  font-size: 15px;
+  animation: up-and-down 1s linear infinite alternate;
 
   display: flex;
   justify-content: center;
+}
+
+@keyframes up-and-down {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(50%);
+  }
 }
