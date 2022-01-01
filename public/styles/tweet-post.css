@@ -6,17 +6,17 @@
 .tweet {
   margin: 20px 0;
   border-style: double;
-  border-color: #0ABAB5;
+  border-color: #ffafcc;
 }
 
 .tweet:hover {
-  box-shadow: 7px 7px #7FFFD4;
+  box-shadow: 7px 7px #ffc8dd;
 }
 
 .content-header {
   margin: 0px 15px;
   padding: 20px;
-  color: #0ABAB5;
+  color: #ffafcc;
   
   display: flex;
   flex-direction: row;
@@ -31,6 +31,8 @@
 }
 
 .tweet-content {
+  color: #b67dd7;
+  /* font-weight: bold; */
   margin: 24px 15px;
   padding: 0 20px 10px 20px;
 }
@@ -39,7 +41,7 @@
   margin: 0 15px;
   padding: 10px 20px 20px 20px;
   border-top-style: solid;
-  border-top-color: #0ABAB5;
+  border-top-color: #ffafcc;
   
   display: flex;
   flex-direction: row;
@@ -48,13 +50,13 @@
 
 .date-count {
   font-size: 16px;
-  color: #0ABAB5;
+  color: #ffafcc;
 
   display: flex;
 }
 
 .footer-icons {
-  color: #0ABAB5;
+  color: #ffafcc;
   font-size: 16px;
   column-gap: 12px;
 
@@ -64,5 +66,5 @@
 }
 
 .fa-flag:hover, .fa-retweet:hover, .fa-heart:hover {
-  color:#4056A2;
+  color:#dfe7fd;
 }

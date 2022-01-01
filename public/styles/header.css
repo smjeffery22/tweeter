@@ -1,9 +1,9 @@
 #tweeter-header {
-  color: #FFFFFF;
+  color: #b67dd7;
   font-size: 1.5em;
   margin-bottom: 30px;
-  background: #0ABAB5;
-  background-image: url("../images/head-bckgrnd-brick-wall.png");
+  background-color: #dfe7fd;
+  /* background-image: url("../images/head-bckgrnd-brick-wall.png"); */
 
   height: 480px;
   width: 100%;

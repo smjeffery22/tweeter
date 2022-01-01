@@ -2,8 +2,8 @@
 @media only screen and (max-width: 1024px) {
 /* Write CSS rules that target Tablets screen sizes downwards - including smartphones */
   nav {
-    background: #0ABAB5;
-    background-image: url("../images/head-bckgrnd-brick-wall.png");
+    background: #dfe7fd;
+    /* background-image: url("../images/head-bckgrnd-brick-wall.png"); */
   }  
 }
 

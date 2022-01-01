@@ -1,5 +1,5 @@
 nav {
-  background-color: #4056A2;
+  background-color: #dfe7fd;
   color: #FFFFFF;
   height: 120px;
   width: 100vw;
@@ -20,12 +20,14 @@ nav {
 nav span.logo {
   font-family: 'Bungee', sans-serif;
   padding-bottom: 1em;
+  color: #b67dd7;
 
   display: flex;
   align-self: flex-end;
 }
 
 nav label[id=navbar-tweet-compose] {
+  color: #b67dd7;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: normal;
   cursor: pointer;
@@ -35,7 +37,7 @@ nav label[id=navbar-tweet-compose] {
  * Double-down icon on the right side of the navbar
  */
 .fa-angle-double-down{
-  color: red;
+  color: #ffafcc;
   font-size: 15px;
   animation: up-and-down 1s linear infinite alternate;
 
