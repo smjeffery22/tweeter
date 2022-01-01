@@ -19,6 +19,7 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+
 }
 
 #overall-container {
@@ -47,4 +48,29 @@ body {
   flex-direction: column;
   /* align-items: center; */
   /* flex-wrap: wrap; */
+}
+
+#scroll-up {
+  display: none;
+  position: fixed;
+  cursor: pointer;
+  bottom: 40px;
+  right: 40px;
+  border-radius: 100%;
+  color: white;
+  background-color: red;
+  padding: 20px;
+}
+
+#scroll-up .fa-angle-double-up {
+  animation: up-and-down-scroll 1s linear infinite alternate;
+}
+
+@keyframes up-and-down-scroll {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
 }

@@ -28,9 +28,6 @@ nav span.logo {
 nav label[id=navbar-tweet-compose] {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: normal;
-}
-
-nav label[id=navbar-tweet-compose]:hover {
   cursor: pointer;
 }
 

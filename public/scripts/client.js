@@ -66,8 +66,22 @@ $(document).ready(function() {
 
   // Event listener for toggle tweeter form
   $('label[id=navbar-tweet-compose]').on('click', function(event) {
-    console.log(event);
     $('section.new-tweet').slideToggle();
+  })
+
+  // Event listener for scrolling to top
+  $(window).on('scroll', function(event) {
+    // show and hide scroll-up button
+    if ($(this).scrollTop() > 120) {
+      $('#scroll-up').fadeIn();
+    } else {
+      $('#scroll-up').fadeOut();
+    }
+
+    $('#scroll-up').click(() => {
+      $(window).scrollTop(0);
+      $('section.new-tweet').slideDown();
+    })
   })
 
   const totalAllowedCount = $('.counter').val();
